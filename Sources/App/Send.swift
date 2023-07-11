@@ -9,5 +9,5 @@ import Foundation
 import Vapor
 
 struct Send: Content {
-var message: String
+let message: String
 }
