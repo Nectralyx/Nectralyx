@@ -30,9 +30,9 @@ func routes(_ app: Application) throws {
 """
         
     }
-    app.post("send") { req async throws in
+    app.post("send") { req -> String in
        let message = try req.content.decode(Send.self)
-        return message
+        return "You sent: \(message)"
     }
     
     
