@@ -12,7 +12,8 @@ func routes(_ app: Application) throws {
     app.get("test") { req async -> String in
 """
 ---OverDrive DataBase---
-        
+
+            /
            /|
           /||
          //||
@@ -27,14 +28,23 @@ func routes(_ app: Application) throws {
            ||//
            |//
            |/
+           /
 """
         
     }
-    app.post("send") { req -> String in
-       let message = try req.content.decode(Send.self)
-        return "You sent: \(message.message)"
+        struct  Send: Content {
+            let message: String
+        }
+    // 2
+    
+    app.post("send") { req async -> String in
+        
+        let data = try? req.content.decode(Send.self)
+        
+        return "Hello \(data?.message ?? "String")!"
     }
     
-    
+    app.get("update") { req async -> String in
+        "Up to date"
+    }
 }
-
