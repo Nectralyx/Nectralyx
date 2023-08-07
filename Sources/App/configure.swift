@@ -15,7 +15,7 @@ public func configure(_ app: Application) async throws {
         username: Environment.get("DATABASE_USERNAME") ?? "vapor_username",
         password: Environment.get("DATABASE_PASSWORD") ?? "vapor_password",
         database: Environment.get("DATABASE_NAME") ?? "vapor_database",
-        tls: .prefer(try .init(configuration: .clientDefault)))
+        tls: .none)
     ), as: .psql)
 
     app.migrations.add(CreateTests())
