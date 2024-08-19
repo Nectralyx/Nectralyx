@@ -1,4 +1,5 @@
-### Hi there 👋
+# Nectralyx
+## Computationally Superior
 
 <!--
 **Powerchip15/Powerchip15** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
